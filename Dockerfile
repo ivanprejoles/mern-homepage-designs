@@ -10,9 +10,8 @@ COPY python ./python
 
 RUN npm run build
 
+# Copy the server code directly to the final stage
 COPY server ./server
-
-COPY --from=builder /app/node_modules ./app/node_modules 
 
 WORKDIR /app/server
 
