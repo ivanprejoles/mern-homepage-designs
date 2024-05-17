@@ -6,8 +6,11 @@
   "scripts": {
     "dev": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "start": "ts-node src/index.ts"
+    "start": "ts-node src/index.ts",
+    "install-deps": "npm install && npm install --prefix client",
+    "build-server": "tsc",
+    "build-client": "npm run build --prefix client",
+    "build": "npm run install-deps && npm run build-server && npm run build-client"
   },
   "keywords": [],
   "author": "",
