@@ -44,7 +44,7 @@ const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
->(({ className, title, children, ...props }, ref) => {
+>(({ className, title, children, ...props }, _ref) => {
 
   const path = props.href ? props.href : ''; 
 
