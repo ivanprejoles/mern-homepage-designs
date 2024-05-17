@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <>
             <section
-                className="relative bg-cover bg-center bg-no-repeat h-full"
+                className="relative bg-cover bg-center bg-no-repeat min-h-[100vh] h-full"
             >
                 <div>
                     <div

@@ -7,7 +7,7 @@ const Pages = () => {
             <h1 className="w-full text-center text-4xl font-serif  lg:text-5xl xl:text-5xl">Home Pages</h1>
             <div className="w-full h-auto px-5 py-10 flex flex-wrap gap-8 justify-center">
                 {HomePages.map((homePage, idx) => (
-                    <div className="w-[20rem] h-[20rem] flex flex-col p-2 bg-slate-100 dark:bg-black gap-4 rounded-md" key={idx}>
+                    <div className="w-[20rem] h-[20rem] flex flex-col p-2 bg-slate-200 dark:bg-gray-900 gap-4 rounded-md" key={idx}>
                         <Link to={homePage.href} className="h-[80%] object-cover rounded-lg overflow-hidden" >
                             <img src={homePage.image} className=" h-full w-full hover:scale-125 transition duration-300 ease-in-out " />
                         </Link>

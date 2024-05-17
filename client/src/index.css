@@ -67,7 +67,8 @@
   }
   
 #root, html, body {
-  height: auto
+  position: relative;
+  min-height: 100vh
 }
 
   @layer base {

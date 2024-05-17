@@ -85,7 +85,7 @@ const MeteorTextBox = () => {
                 </div>
         
                 {/* Meaty part - Meteor effect */}
-                <Meteors number={20} />
+                <Meteors number={5} />
             </div>
         </div>
     );
