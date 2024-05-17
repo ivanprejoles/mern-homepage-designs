@@ -24,14 +24,13 @@ export function NavigationMenus() {
             <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                     {Pages.map((page, key) => (
-                        <Link to={page.href} key={key}>
-                            <ListItem 
-                                title={page.title}
-                                
-                            >
-                            {page.description}
-                            </ListItem>
-                        </Link>
+                        <ListItem 
+                          key={key}
+                          title={page.title}
+                          href={page.href}
+                        >
+                        {page.description}
+                        </ListItem>
                     ))}
                 </ul>
             </NavigationMenuContent>
@@ -44,12 +43,16 @@ export function NavigationMenus() {
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 >(({ className, title, children, ...props }, ref) => {
+
+  const path = props.href ? props.href : ''; 
+
   return (
     <li>
       <NavigationMenuLink asChild>
-        <a
-          ref={ref}
+        <Link
+          to={path}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
@@ -60,7 +63,7 @@ const ListItem = React.forwardRef<
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
-        </a>
+        </Link>
       </NavigationMenuLink>
     </li>
   )

@@ -4,25 +4,20 @@ import { motion } from "framer-motion";
 import { ImagesSlider } from "@/components/ui/image-slider";
 import { PlaceholdersAndVanishInput } from "@/components/ui/placeholders-and-vanish";
 import Pages from "@/lib/pages-data";
+import { Link } from "react-router-dom";
 // import { useEffect } from "react";
 
 const Home = () => {
     
-    const placeholders = Pages.map(page => page.title)
+    const placeholders = Pages.map(page => ({title: page.title, link: page.href, textColor: page.textColor}))
 
-    const images = [
-        '/imageSlider/1.png',
-        '/imageSlider/2.png',
-        '/imageSlider/3.png',
-        '/imageSlider/2.png',
-        '/imageSlider/3.png',
-    ]
+    const images = Pages.map(page => ({image: page.image, link: page.href}))
 
 
     return (
         <>
             <section
-                className="relative  bg-cover bg-center bg-no-repeat"
+                className="relative bg-cover bg-center bg-no-repeat h-full"
             >
                 <div>
                     <div
@@ -35,34 +30,34 @@ const Home = () => {
                     >
                         <div className="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right flex flex-col items-center">
                             <h1 className="text-3xl font-extrabold sm:text-5xl w-auto text-center">
-                                {`Let's find your page`}
+                                {`Explore Home Pages`}
                                 <PlaceholdersAndVanishInput
                                     placeholders={placeholders}
                                 />
                             </h1>
 
                             <p className="mt-4 max-w-md sm:text-xl/relaxed">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo tenetur fuga ducimus
-                                numquam ea!
+                                Discover a curated selection of high-quality homepages tailored to your needs, offering a variety of styles and functionalities for your next project.
                             </p>
 
                             <div className="mt-8 flex flex-wrap gap-4 text-center">
-                                <a
-                                href="#"
-                                className="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
+                                <Link
+                                    to="page"
+                                    className="block w-full rounded bg-black px-12 py-3 text-sm font-medium text-white shadow hover:bg-gray-950 dark:border-white border focus:outline-none focus:ring sm:w-auto"
                                 >
-                                Get Started
-                                </a>
+                                    Explore Pages
+                                </Link>
 
                                 <a
-                                href="#"
-                                className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-rose-600 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
+                                    href="https://myportfolio-ten-lac-65.vercel.app/"
+                                    target="_blank"
+                                    className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-black shadow border-black hover:bg-gray-100 border focus:outline-none focus:ring sm:w-auto"
                                 >
-                                Learn More
+                                    About Me
                                 </a>
                             </div>
                         </div>
-                        <div className="flex-1 h-full flex items-center justify-center md:p-3">
+                        <div className="flex-1 h-full flex items-center justify-center sm:px-28 sm:py-20 object-cover rounded-md">
                             <ImagesSlider className="h-full" images={images}>
                                 <motion.div
                                     initial={{
@@ -84,9 +79,6 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                {/* <div className="absolute flex justify-between overflow-hidden">
-
-                </div> */}
             </section>
             <section className="relative  bg-cover bg-center bg-no-repea">
                 <img src="" className="h-full max-w-full"/>

@@ -1,5 +1,3 @@
-'use client'
-
 import { Meteors } from "@/components/ui/meteors";
 import { useEffect, useState } from "react";
 

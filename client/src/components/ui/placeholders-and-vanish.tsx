@@ -3,11 +3,12 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 export function PlaceholdersAndVanishInput({
   placeholders,
 }: {
-  placeholders: string[];
+  placeholders: {title: string, link: string, textColor: string}[];
 }) {
   const [currentPlaceholder, setCurrentPlaceholder] = useState(0);
 
@@ -154,6 +155,7 @@ export function PlaceholdersAndVanishInput({
         value && "bg-gray-50"
       )}
     >
+      <Link to={placeholders[currentPlaceholder].link}>
       <canvas
         className={cn(
           "absolute pointer-events-none  text-white transform scale-50 top-[20%] left-2 sm:left-8 origin-top-left filter invert dark:invert-0 pr-20",
@@ -162,17 +164,16 @@ export function PlaceholdersAndVanishInput({
         ref={canvasRef}
         onClick={vanishAndSubmit}
       />
-      <div
-        ref={inputRef}
-        className={cn(
-          "w-full p-1 relative text-sm sm:text-base z-50 border-none text-white h-full rounded-full focus:outline-none focus:ring-0 ",
-          animating && "text-transparent dark:text-transparent"
-        )}
-      >
-        {value}
-      </div>
-
-
+          
+        <div
+          ref={inputRef}
+          className={cn(
+            "w-full p-1 relative text-sm sm:text-base z-50 border-none text-white h-full rounded-full focus:outline-none focus:ring-0",
+            animating && "text-transparent dark:text-transparent"
+          )}
+        >
+          {value}
+        </div>
       <div className="absolute inset-0 flex items-center rounded-full pointer-events-none">
         <AnimatePresence mode="wait">
           {!value && (
@@ -194,13 +195,17 @@ export function PlaceholdersAndVanishInput({
                 duration: 0.3,
                 ease: "linear",
               }}
-              className="w-full truncate block font-extrabold text-rose-700 text-center"
+              className={cn(
+                "w-full truncate block font-extrabold text-center",
+                placeholders[currentPlaceholder].textColor
+              )}
             >
-              {placeholders[currentPlaceholder]}
+                {placeholders[currentPlaceholder].title}
             </motion.strong>
           )}
         </AnimatePresence>
       </div>
+    </Link>
     </div>
   );
 }

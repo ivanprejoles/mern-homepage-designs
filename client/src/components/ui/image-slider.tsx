@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const ImagesSlider = ({
   images,
@@ -12,7 +13,7 @@ export const ImagesSlider = ({
   autoplay = true,
   direction = "up",
 }: {
-  images: string[];
+  images: {image: string, link: string}[];
   children: React.ReactNode;
   overlay?: React.ReactNode;
   overlayClassName?: string;
@@ -45,8 +46,8 @@ export const ImagesSlider = ({
     const loadPromises = images.map((image) => {
       return new Promise((resolve, reject) => {
         const img = new Image();
-        img.src = image;
-        img.onload = () => resolve(image);
+        img.src = image.image;
+        img.onload = () => resolve(image.image);
         img.onerror = reject;
       });
     });
@@ -124,7 +125,7 @@ export const ImagesSlider = ({
   return (
     <div
       className={cn(
-        "overflow-hidden h-full w-full relative flex items-center justify-center ",
+        "overflow-hidden h-full w-full relative flex items-center justify-center object-cover rounded-xl",
         className
       )}
       style={{
@@ -140,15 +141,17 @@ export const ImagesSlider = ({
 
       {areImagesLoaded && (
         <AnimatePresence>
-          <motion.img
-            key={currentIndex}
-            src={loadedImages[currentIndex]}
-            initial="initial"
-            animate="visible"
-            exit={direction === "up" ? "upExit" : "downExit"}
-            variants={slideVariants}
-            className="image h-full w-full absolute inset-0 object-cover object-center"
-          />
+          <Link to={images[currentIndex].link} className="z-50">
+            <motion.img
+              key={currentIndex}
+              src={loadedImages[currentIndex]}
+              initial="initial"
+              animate="visible"
+              exit={direction === "up" ? "upExit" : "downExit"}
+              variants={slideVariants}
+              className="image h-full w-full absolute inset-0 object-cover object-center"
+            />
+          </Link>
         </AnimatePresence>
       )}
     </div>

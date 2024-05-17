@@ -8,7 +8,7 @@ const JoinNow = () => {
                     <span className="absolute w-auto h-auto flex flex-col text-5xl md:left-[10%] -top-4 ">
                         🚀
                     </span>
-                    <h2 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-red-500 to-purple-600 bg-opacity-50 lx:top-50">
+                    <h2 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-red-500 to-purple-600 bg-opacity-50 lx:top-50 w-full">
                         Beyond the Horizon<br/> Apply Now
                     </h2>
                 </div>
