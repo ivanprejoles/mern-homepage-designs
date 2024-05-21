@@ -9,11 +9,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
     
-    const placeholders = Pages.map(page => ({title: page.title, link: page.href, textColor: page.textColor}))
-
-    const images = Pages.map(page => ({image: page.image, link: page.href}))
-
-
+    const placeholders = Pages.map(page => ({title: page.title, link: page.href, textColor: page.textColor, image: page.image}))
     return (
         <>
             <section
@@ -58,7 +54,7 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="flex-1 h-full flex items-center justify-center sm:px-28 sm:py-20 object-cover rounded-md">
-                            <ImagesSlider className="h-full" images={images}>
+                            <ImagesSlider className="h-full" images={placeholders}>
                                 <motion.div
                                     initial={{
                                     opacity: 0,
@@ -80,12 +76,11 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            <section className="relative  bg-cover bg-center bg-no-repea">
+            {/* <section className="relative  bg-cover bg-center bg-no-repea">
                 <img src="" className="h-full max-w-full"/>
                 <div className="w-full h-full min-w-[40%]"></div>
                 <img src="" alt="" />
-                {/* <FormExample /> */}
-            </section>  
+            </section>   */}
         </>  
     );
 }

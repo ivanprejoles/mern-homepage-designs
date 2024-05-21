@@ -11,6 +11,7 @@ export function PlaceholdersAndVanishInput({
   placeholders: {title: string, link: string, textColor: string}[];
 }) {
   const [currentPlaceholder, setCurrentPlaceholder] = useState(0);
+  
 
   useEffect(() => {
     const startAnimation = () => {

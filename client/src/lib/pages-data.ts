@@ -2,13 +2,14 @@ import Home from "@/routes/Home";
 import SpacePage from "@/routes/Space/space-page"
 import MinimalistPage from "@/routes/Minimalist/minimalist-page";
 import PagesCollection from "@/routes/Pages";
+import GamingPlatformPage from "@/routes/GamingPlatform/gaming-platform-page";
 
 const page = '/page'
 
 const Pages: { title: string; href: string; description: string, element: () => JSX.Element, image: string, textColor: string}[] = [
     {
         title: 'Space Exploration',
-        description: 'Embark on a captivating journey of space exploration as we delve deeper into the mysteries of the cosmos.',
+        description: 'Embark on a captivating journey of space exploration as we delve into 3D parallax space.',
         href: `${page}/space`,
         element: SpacePage,
         image: '/imageSlider/space.png',
@@ -21,7 +22,15 @@ const Pages: { title: string; href: string; description: string, element: () => 
         element: MinimalistPage,
         image: '/imageSlider/minimalist.png',
         textColor: 'text-[#EDD6DD]'
-    }
+    },
+    {    
+        title: "Games Platform",
+        description: "Experience a seamless and dynamic homepage! Our animated interface guides you through the platform with effortless style.",
+        href: `${page}/gaming-platform`,
+        element: GamingPlatformPage,
+        image: '/imageSlider/gameplatform.png',
+        textColor: 'text-[#22ABF0]'
+    },
 ]
 
 export const Routers = [
