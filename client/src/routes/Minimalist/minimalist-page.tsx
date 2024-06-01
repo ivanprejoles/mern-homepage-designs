@@ -144,6 +144,7 @@ const MinimalistPage = () => {
 
             {/* video  */}
             <div className="w-full h-auto flex flex-col gap-8">
+
                 <div className="w-full h-[30rem] flex flex-row relative py-[1px]">
                     <div className="md:w-3/4 relative right-0 ml-auto object-cover">
                         <video
@@ -179,6 +180,7 @@ const MinimalistPage = () => {
                         </div>
                     </div>
                 </div>
+
                 <div className="w-full h-[30rem] flex flex-row relative py-[1px]">
                     <div className="md:w-3/4 relative object-cover">
                         <video
@@ -214,6 +216,7 @@ const MinimalistPage = () => {
                         </div>
                     </div>
                 </div>
+                
                 <div className="w-full h-[30rem] flex flex-row relative py-[1px]">
                     <div className="right-0 ml-auto md:w-3/4 relative object-cover overflow-hidden">
                         <video
