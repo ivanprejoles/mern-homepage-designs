@@ -1,0 +1,24 @@
+.shadow-background {
+    background: radial-gradient(#00000057 50%, rgba(27, 24, 24, 0.408));
+    box-shadow: 10px -10px 25px 23px rgba(0, 0, 0, 0.875);
+}
+
+.awesomesvg {
+    color: #17152F;
+    background-image: linear-gradient(
+      150deg,
+      #deccc5 13.4%,
+      #da54d8 50%,
+      #9d0be6 80.6%
+    );
+  }
+
+  .awesomesvg.circle {
+    background-image: conic-gradient(
+      from 270deg,
+      #ff4800 10%,
+      #dfd902 35%
+      #da54d8 72% 75%,
+      #ff00d0 95%
+    );
+  }

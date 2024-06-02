@@ -8,7 +8,7 @@ import CollapseMenu from "./collapse-menu";
 
 const NavigationBar = () => {
     return (  
-        <header className="bg-white dark:bg-gray-900 fixed z-[1000] top-0 w-full border-b backdrop-blur-sm bg-white/[0.6] dark:bg-black/[0.6] border-neutral-200 dark:border-white/[0.1]">
+        <header className="  fixed z-[1000] top-0 w-full border-b backdrop-blur-sm dark:backdrop-blur-sm bg-white/[0.1] dark:bg-black/[0.1] border-neutral-200/[.1] dark:border-white/[0.1]">
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                     <div className="h-full w-[3rem] md:flex md:items-center md:gap-12">
@@ -27,7 +27,7 @@ const NavigationBar = () => {
                                 {Routers.map((router, idx) => (
                                     <li key={idx}>
                                         <Link to={router.link}>
-                                            <p className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75 hover:underline">
+                                            <p className="text-black transition  dark:text-white hover:underline">
                                                 {router.title}
                                             </p>                                        
                                         </Link>
@@ -38,7 +38,7 @@ const NavigationBar = () => {
                                         to="https://myportfolio-ten-lac-65.vercel.app/"
                                         target="_blank"
                                     >
-                                        <p className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75 hover:underline">
+                                        <p className="text-black transition  dark:text-white  hover:underline">
                                             About Me
                                         </p>                                        
                                     </Link>
@@ -49,7 +49,7 @@ const NavigationBar = () => {
                         <div className="flex items-center gap-4">
                             <div className="sm:flex sm:gap-4">
                                 <a
-                                    className="transition ease-out delay-75 duration-300 flex flex-row rounded-md px-2 gap-2 py-2.5 text-sm font-medium bg-white text-purple-600 border border-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-white hover:text-white hover:border-white dark:bg-black dark:hover:border-black dark:hover:text-black dark:hover:to-black"
+                                    className="transition ease-out delay-75 duration-300 flex flex-row rounded-md px-2 gap-2 py-2.5 text-sm font-medium bg-white/[.1] text-purple-600 border border-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-white/[.5] hover:text-white/[.9] hover:border-white/[.9] dark:bg-black/[.1] dark:hover:border-black/[.9] dark:hover:text-black dark:hover:to-black/[.5]"
                                     href="https://github.com/ivanprejoles"
                                     target="_blank"
                                 >
@@ -61,7 +61,7 @@ const NavigationBar = () => {
 
                                 <div className="hidden sm:flex">
                                     <a
-                                        className="transition ease-out delay-75 duration-300 flex flex-row rounded-md px-2 gap-2 py-2.5 text-sm font-medium bg-white text-blue-600 border border-blue-600 hover:bg-gradient-to-r hover:from-blue-600 hover:to-white hover:text-white hover:border-white dark:bg-black dark:hover:border-black dark:hover:text-black dark:hover:to-black"
+                                        className="transition ease-out delay-75 duration-300 flex flex-row rounded-md px-2 gap-2 py-2.5 text-sm font-medium bg-white/[.1] text-blue-600 border border-blue-600 hover:bg-gradient-to-r hover:from-blue-600 hover:to-white/[.5] hover:text-white/[.9] hover:border-white/[.9] dark:bg-black/[.1] dark:hover:border-black/[.9] dark:hover:text-black dark:hover:to-black/[.5]"
                                         href="https://www.linkedin.com/in/ivan-patrick-prejoles-688469248/"
                                         target="_blank"
                                     >

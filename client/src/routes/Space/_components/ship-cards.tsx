@@ -43,6 +43,8 @@ const ShipCards = () => {
                 </div>
                 {ships.map((ship, key) => (
                     <UsablePin 
+                        className="text-white bg-black/50 border-slate-700" 
+                        containerClassName="scale-150"
                         key={key}
                         title={ship.title} 
                         background={ship.background} 
