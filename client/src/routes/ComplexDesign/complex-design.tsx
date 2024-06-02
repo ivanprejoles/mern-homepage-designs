@@ -323,13 +323,13 @@ const ComplexDesign = () => {
                         items={products}
                         direction="left"
                         speed="slow"
-                        // pauseOnHover={false}
+                        pauseOnHover={false}
                         />
                     <InfiniteVerticalMovingCards
                         items={products}
                         direction="right"
                         speed="slow"
-                        // pauseOnHover={false}
+                        pauseOnHover={false}
                         className='hidden sm:block'
                         />
                     <InfiniteVerticalMovingCards
@@ -337,7 +337,7 @@ const ComplexDesign = () => {
                         direction="left"
                         speed="slow"
                         className='px-0 hidden lg:block'
-                        // pauseOnHover={false}
+                        pauseOnHover={false}
                     />
                     <div className="z-[21] w-full h-[10rem] top-0 left-0 right-0 mx-auto absolute bg-gradient-to-t from from-transparent via-black to-black" />
                     <div className="z-[21] w-full h-[10rem] bottom-0 left-0 right-0 mx-auto absolute bg-gradient-to-t from-[#17152F] via-[#17152F] to-transparent" />
