@@ -26,6 +26,9 @@ module.exports = {
       },
     },
     extend: {
+      // fontFamily: {
+      //   MonoSans: ['MonoSans'],
+      // },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -76,6 +79,11 @@ module.exports = {
             transform: "translate(calc(-50% - 0.5rem))",
           },
         },
+        scrolls: {
+          to: {
+            transform: "translate(0, calc(-50% - 0.5rem))"
+          },
+        },
         "accordion-up": {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
@@ -102,6 +110,7 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "meteor-effect": "meteor 5s linear infinite",
         shimmer: "shimmer 2s linear infinite",
+        'vertical-scroll': " scrolls var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
         scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
     },

@@ -8,11 +8,13 @@ export const PinContainer = ({
   href,
   className,
   containerClassName,
+  title
 }: {
   children: React.ReactNode;
   href?: string;
   className?: string;
   containerClassName?: string;
+  title?: string
 }) => {
   const [transform, setTransform] = useState(
     "translate(-50%,-50%) rotateX(0deg)"
@@ -29,7 +31,7 @@ export const PinContainer = ({
     <div
       className={cn(
         "relative group/pin z-50  cursor-pointer",
-        containerClassName
+        // containerClassName
       )}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
@@ -45,28 +47,31 @@ export const PinContainer = ({
           style={{
             transform: transform,
           }}
-          className="absolute left-1/2 p-4 top-1/2  flex justify-start items-start  rounded-2xl  shadow-[0_8px_16px_rgb(0_0_0/0.4)] bg-black/[.55] border border-white/[0.1] group-hover/pin:border-white/[0.2] transition duration-700 overflow-hidden"
+          className={cn("absolute left-1/2 p-4 top-1/2  flex justify-start items-start  rounded-2xl  shadow-[0_8px_16px_rgb(0_0_0/0.4)] bg-black/[.55] border border-white/[0.1] group-hover/pin:border-white/[0.2] transition duration-700 overflow-hidden", className)}
         >
-          <div className={cn(" relative z-50 ", className)}>{children}</div>
+          <div className={cn(" relative z-50 ")}>{children}</div>
         </div>
       </div>
-      <PinPerspective href={href} />
+      <PinPerspective href={href} containerClassName={containerClassName} title={title} />
     </div>
   );
 };
 
 export const PinPerspective = ({
   href,
+  title,
+  containerClassName
 }: {
   title?: string;
   href?: string;
+  containerClassName?: string
 }) => {
   return (
     <motion.div className="pointer-events-none  w-96 h-80 flex items-center justify-center opacity-0 group-hover/pin:opacity-100 z-[60] transition duration-500">
       <div className=" w-full h-full -mt-7 flex-none  inset-0">
         <div className="absolute -top-10 inset-x-0  flex justify-center">
           <div className="w-[10rem] h-[10rem] absolute top-0">
-            <img src={href} className="w-full h-full scale-150 opacity-100" />
+            <img alt={title} src={href} className={cn("w-full h-full scale-150 opacity-100 z-[100]",  containerClassName)} />
           </div>
         </div>
 

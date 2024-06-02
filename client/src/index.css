@@ -76,7 +76,20 @@
 
 
 
-  @layer base {
+
+@layer base {
+  @font-face {
+    font-family: 'MonaSans';
+    src:
+    url('./lib/fonts/Mona-Sans.woff2') format('woff2 supports variations'),
+    url('./lib/fonts/Mona-Sans.woff2') format('woff2-variations');
+    font-weight: 200 900;
+    font-stretch: 75% 125%;
+  }
+  
+  .mona-sans {
+    font-family: 'MonaSans';
+  }
     * {
       @apply border-border;
     }
