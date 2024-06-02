@@ -8,6 +8,14 @@ import ComplexDesign from "@/routes/ComplexDesign/complex-design";
 const page = '/page'
 
 const Pages: { title: string; href: string; description: string, element: () => JSX.Element, image: string, textColor: string}[] = [
+    {    
+        title: "Complex Design",
+        description: "a web page layout that incorporates a high level of detail, multiple interactive elements, and sophisticated features.",
+        href: `${page}/complex-design`,
+        element: ComplexDesign,
+        image: '/imageSlider/complexPage.png',
+        textColor: 'text-[#FD70D6]'
+    },
     {
         title: 'Space Exploration',
         description: 'Embark on a captivating journey of space exploration as we delve into 3D parallax space.',
@@ -31,14 +39,6 @@ const Pages: { title: string; href: string; description: string, element: () => 
         element: GamingPlatformPage,
         image: '/imageSlider/gameplatform.png',
         textColor: 'text-[#22ABF0]'
-    },
-    {    
-        title: "Complex Design",
-        description: "a web page layout that incorporates a high level of detail, multiple interactive elements, and sophisticated features.",
-        href: `${page}/complex-design`,
-        element: ComplexDesign,
-        image: '/imageSlider/complexPage.png',
-        textColor: 'text-[#FD70D6]'
     },
 ]
 
